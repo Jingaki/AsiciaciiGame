@@ -5,7 +5,7 @@ import com.example.myapplication.R
 import java.io.Serializable
 
 class Game : Serializable {
-    //ne moze da se zove playerGroup zbog JVM, ima isti naziv za neki modul
+
     private var plGroup : PlayerGroup = PlayerGroup("")
     private var numOfWordsPerPlayer : Int = 0
     private var currentPlayer : Player = Player("")
@@ -36,8 +36,7 @@ class Game : Serializable {
     fun getCurrentWord() : String {
         return currentWord
     }
-    //vraca null ako smo stigli do kraja
-    //ako nismo, vraca sljedecu rijec, i nju postavlja na currentWord
+
     fun getNextWord(word: String) : String? {
         val i = wordBank.indexOf(word)
         return if (i==wordBank.size-1) {
@@ -50,7 +49,7 @@ class Game : Serializable {
     fun getTimer() : Int {
         return timer
     }
-    //mijenja trenutnog igraca, a kad stignemo na kraj liste krecemo ispcetka
+
     fun nextPlayer() {
         val i = listForWordEntering().indexOf(currentPlayer)
         currentPlayer = if (i==listForWordEntering().size-1)
@@ -114,13 +113,12 @@ class Game : Serializable {
     fun isAlreadyEntered(word: String) : Boolean {
         return wordBank.contains(word)
     }
-//ove 2 fje mogu posluziti u BetweenPlayersActivity
+
     fun pairedWith (player: Player) : Player {
         val theirPair: Player
         var pair = listOfPairs.find { it.first == player }
         if (pair == null) {
             pair = listOfPairs.find { it.second == player }
-            //nece se desiti da bude null
             theirPair = pair!!.first
         } else
             theirPair = pair.second
@@ -129,7 +127,6 @@ class Game : Serializable {
     fun numOfCorrectAnswersInPair(player: Player) : Int {
         return player.getNumOfCorrectAnswers() + pairedWith(player).getNumOfCorrectAnswers()
     }
-    //broj poena jednog para
     fun pointsOfAPair(pair: Pair<Player, Player>) : Int {
         return pair.first.getNumOfCorrectAnswers() + pair.second.getNumOfCorrectAnswers()
     }
@@ -146,50 +143,3 @@ class Game : Serializable {
     }
 
 }
-
-//testiranje
-//fun main() {
-//    val g1 = Game()
-//    val pg = PlayerGroup("test")
-//    val pl1 = Player("tanja")
-//    val pl2 = Player("anja")
-//    val pl3 = Player("vaske")
-//    val pl4 = Player("zile")
-//    val pl5 = Player("sanja")
-//    val pl6 = Player("dragana")
-//    pg.add(pl1)
-//    pg.add(pl2)
-//    pg.add(pl3)
-//    pg.add(pl4)
-//    pg.add(pl5)
-//    pg.add(pl6)
-//    g1.setPlayerGroup(pg)
-//
-//
-//    g1.makeRandomPairs()
-////    println("random")
-//    println(g1.getPairs())
-////    print("lista za unos rijeci: ")
-//    println(g1.listForWordEntering())
-//
-//    /*
-//    val rijec1="prva"
-//    val rijec2="druga"
-//    g1.addWord(rijec1)
-//    g1.addWord(rijec2)
-////    println(g1.getWords())
-//
-//    g1.setCurrentWord(rijec1)
-////    println(g1.getCurrentWord())
-////    println(g1.getNextWord(rijec1))
-////    println(g1.getNextWord(g1.getCurrentWord()))
-//*/
-//
-//    g1.setCurrentPlayer(pl3)
-//    println(g1.getCurrentPlayer())
-//    g1.nextPlayer()
-//    println(g1.getCurrentPlayer())
-//    g1.nextPlayer()
-//    println(g1.getCurrentPlayer())
-//
-//}

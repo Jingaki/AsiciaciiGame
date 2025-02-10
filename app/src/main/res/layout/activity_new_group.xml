@@ -68,10 +68,10 @@
 
         <AutoCompleteTextView
             android:id="@+id/autoCompleteTextView2"
-            android:hint = "br"
-            android:layout_width="match_parent"
+            android:layout_width="125dp"
             android:layout_height="80dp"
             android:layout_weight="10"
+            android:hint="num"
             android:inputType="none"
             android:textAlignment="center"
             android:textAllCaps="true"

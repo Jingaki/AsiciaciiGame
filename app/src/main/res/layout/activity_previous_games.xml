@@ -10,18 +10,19 @@
     <Button
 
         android:id="@+id/btnBackPreviousGames"
-        android:text="."
         android:layout_width="74dp"
         android:layout_height="79dp"
         android:background="@drawable/arrow"
+        android:text="."
         android:textAllCaps="true"
         app:cornerRadius="@android:dimen/notification_large_icon_height"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/labelPreviousGames"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
+
 
     <TextView
         android:id="@+id/previousGamesList"
@@ -33,11 +34,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
-
+        app:layout_constraintTop_toBottomOf="@+id/labelPreviousGames"
+        app:layout_constraintVertical_bias="0.23" />
 
     <TextView
         android:id="@+id/labelPreviousGames"
@@ -51,9 +51,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.177" />
 
     <TextView
         android:id="@+id/tvListOfWins"
@@ -65,10 +66,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.906"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toEndOf="@+id/previousGamesList"
+        app:layout_constraintTop_toBottomOf="@+id/labelPreviousGames"
+        app:layout_constraintVertical_bias="0.23" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

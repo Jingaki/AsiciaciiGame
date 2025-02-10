@@ -32,6 +32,7 @@ Phases change when all of the words are guessed. Each player can dodge subject n
 
 After the third phase, the guessed words are added up in pairs and the pair with the most guesses wins.
 
+<img src="img/Untitled.png"/>
 
 ### Author
 Kiril Kostov f101519
